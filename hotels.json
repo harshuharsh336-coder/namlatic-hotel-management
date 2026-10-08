@@ -1,0 +1,105 @@
+[
+  {
+    "id": 1,
+    "title": "Grand Palace Resort & Spa",
+    "description": "Experience luxury living with private beach access, infinity pool, and world-class fine dining.",
+    "price": 320,
+    "rating": 4.9,
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "locationName": "Bengaluru, India",
+    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+    "amenities": [
+      "Pool",
+      "Spa",
+      "WiFi",
+      "Ocean View",
+      "Breakfast"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Ocean Palm Beach Boutique",
+    "description": "Charming seaside hotel featuring panoramic sunset ocean views, private balconies and fresh seafood.",
+    "price": 185,
+    "rating": 4.7,
+    "latitude": 15.2993,
+    "longitude": 74.124,
+    "locationName": "Goa, India",
+    "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80",
+    "amenities": [
+      "Ocean View",
+      "WiFi",
+      "Bar",
+      "Beach Access"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Heritage Royal Palace",
+    "description": "Historic royal architectural retreat with opulent suite rooms, cultural performances, and traditional cuisine.",
+    "price": 260,
+    "rating": 4.8,
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "locationName": "Jaipur, India",
+    "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+    "amenities": [
+      "Heritage",
+      "WiFi",
+      "Pool",
+      "Restaurant"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Misty Mountains Eco Lodge",
+    "description": "Serene mountain eco-resort nestled amidst lush pine forest with fireplace suites and trekking tours.",
+    "price": 140,
+    "rating": 4.6,
+    "latitude": 10.0889,
+    "longitude": 77.0595,
+    "locationName": "Munnar, India",
+    "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80",
+    "amenities": [
+      "Trekking",
+      "WiFi",
+      "Fireplace",
+      "Mountain View"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Skyline Metropolis Hotel",
+    "description": "Modern luxury business hotel located in central downtown with rooftop lounge and high-speed executive facilities.",
+    "price": 210,
+    "rating": 4.5,
+    "latitude": 19.076,
+    "longitude": 72.8777,
+    "locationName": "Mumbai, India",
+    "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80",
+    "amenities": [
+      "Gym",
+      "WiFi",
+      "Rooftop Bar",
+      "Business Lounge"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Lakeside Serenity Suites",
+    "description": "Peaceful lakefront resort featuring scenic boathouse views, outdoor infinity Jacuzzi, and organic dining.",
+    "price": 195,
+    "rating": 4.8,
+    "latitude": 24.5854,
+    "longitude": 73.7125,
+    "locationName": "Udaipur, India",
+    "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
+    "amenities": [
+      "Lake View",
+      "Jacuzzi",
+      "WiFi",
+      "Organic Food"
+    ]
+  }
+]
