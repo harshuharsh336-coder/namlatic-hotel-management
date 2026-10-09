@@ -125,6 +125,48 @@ function writeData(data) {
   fs.writeFileSync(dbFile, JSON.stringify(data, null, 2));
 }
 
+// Create hotels table and insert sample hotels
+async function initializeHotels() {
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS hotels (
+      id BIGINT PRIMARY KEY,
+      title TEXT NOT NULL,
+      description TEXT NOT NULL,
+      price NUMERIC(10,2) NOT NULL,
+      rating NUMERIC(2,1),
+      latitude DOUBLE PRECISION,
+      longitude DOUBLE PRECISION,
+      location_name TEXT,
+      image TEXT,
+      amenities JSONB
+    )
+  `);
+
+  for (const hotel of initialHotels) {
+    await pool.query(
+      `INSERT INTO hotels
+       (id, title, description, price, rating, latitude, longitude,
+        location_name, image, amenities)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
+       ON CONFLICT (id) DO NOTHING`,
+      [
+        hotel.id,
+        hotel.title,
+        hotel.description,
+        hotel.price,
+        hotel.rating,
+        hotel.latitude,
+        hotel.longitude,
+        hotel.locationName,
+        hotel.image,
+        JSON.stringify(hotel.amenities)
+      ]
+    );
+  }
+
+  console.log("Hotel data initialized!");
+}
+
 // GET /api/hotels with search title, price filter, pagination
 app.get('/api/hotels', async (req, res) => {
   let hotels = await readData();
@@ -584,7 +626,14 @@ app.delete('/api/bookings/:id', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Backend server running on http://localhost:${PORT}`);
-});
+
+initializeHotels()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Backend server running on http://localhost:${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.error('Database initialization failed:', error);
+  });
 
