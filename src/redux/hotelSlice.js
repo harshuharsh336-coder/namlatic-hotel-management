@@ -352,22 +352,21 @@ const hotelSlice = createSlice({
      .addCase(fetchHotels.pending, (state) => {
         state.status = 'loading';
       })
-     .addCase(fetchHotels.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        if (action.payload &&!action.payload.isFallback && action.payload.data) {
-          state.allHotels = action.payload.data;
-          state.totalItems = action.payload.total;
-          state.totalPages = action.payload.totalPages;
-          hotelSlice.caseReducers.applyLocalFilters(state);
-        } else {
-          hotelSlice.caseReducers.applyLocalFilters(state);
-        }
-      })
-     .addCase(fetchHotels.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message;
-        hotelSlice.caseReducers.applyLocalFilters(state);
-      })
+     
+.addCase(fetchHotels.fulfilled, (state, action) => {
+  state.status = 'succeeded';
+
+  if (action.payload && !action.payload.isFallback && action.payload.data) {
+    state.allHotels = action.payload.data;
+  }
+
+  hotelSlice.caseReducers.applyLocalFilters(state);
+})
+.addCase(fetchHotels.rejected, (state, action) => {
+  state.status = 'failed';
+  state.error = action.error.message;
+  hotelSlice.caseReducers.applyLocalFilters(state);
+})
      .addCase(addHotel.fulfilled, (state, action) => {
         state.allHotels.unshift(action.payload);
         state.isFormModalOpen = false;

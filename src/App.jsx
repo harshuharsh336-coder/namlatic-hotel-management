@@ -30,7 +30,7 @@ export default function App() {
   const activeTab = useSelector(state => state.bookings.activeTab);
 
   useEffect(() => {
-    dispatch(fetchHotels());
+    dispatch(fetchHotels({ limit: 100 }));
   }, [dispatch]);
 
   return (
